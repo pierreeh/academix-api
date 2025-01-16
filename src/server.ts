@@ -1,10 +1,10 @@
-import "dotenv/config";
-import express from "express";
-import cors from "cors";
-import { xss } from "express-xss-sanitizer";
-import cookieParser from "cookie-parser";
+import 'dotenv/config';
+import express from 'express';
+import cors from 'cors';
+import { xss } from 'express-xss-sanitizer';
+import cookieParser from 'cookie-parser';
 
-import requestLogger from "./middlewares/requestLogger.middleware";
+import requestLogger from './middlewares/requestLogger.middleware';
 
 const corsOptions = {
   origin: process.env.CORS_ORIGIN,
@@ -25,6 +25,6 @@ export default function server() {
 
   app.use(requestLogger);
 
-  console.log("hello world");
+  console.log('hello world');
   return app;
 }

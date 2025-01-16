@@ -1,5 +1,5 @@
 {
-  "name": "academix-api",
+  "name": "bitenews-api",
   "version": "0.0.1",
   "scripts": {
     "dev": "tsx watch src",
