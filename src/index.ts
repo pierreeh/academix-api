@@ -1,15 +1,20 @@
-import "dotenv/config";
-import pino from "pino";
+import 'dotenv/config';
+import pino from 'pino';
 
-import server from "./server";
+import server from './server';
 
-const logger = pino({ name: "server start" });
+const logger = pino({ name: 'server start' });
 
 function app() {
-  const app = server();
-  app.listen(process.env.PORT, () =>
-    logger.info(`Listening on port ${process.env.PORT}`)
-  );
+  try {
+    const app = server();
+    app.listen(process.env.PORT, () =>
+      logger.info(`Listening on port ${process.env.PORT}`),
+    );
+  } catch (e) {
+    console.error(e);
+    process.exit(1);
+  }
 }
 
 app();

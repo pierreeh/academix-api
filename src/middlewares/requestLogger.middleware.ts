@@ -34,7 +34,7 @@ export default function requestLogger(
 
   res.on('finish', () => {
     const [seconds, nanoseconds] = process.hrtime(startTime);
-    const duration = (seconds * 1000 + nanoseconds / 1e6).toFixed(2); // duration in ms
+    const duration = (seconds * 1000 + nanoseconds / 100).toFixed(2); // duration in ms
 
     const level = customlogLevel(res);
     if (level === logLevel.Silent) return;

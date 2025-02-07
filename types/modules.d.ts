@@ -1,1 +1,1 @@
-declare module "express-xss-sanitizer";
+declare module 'express-xss-sanitizer';
